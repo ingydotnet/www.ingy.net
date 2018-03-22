@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+
+<body>
+
+<p>Greetings,</p>
+
+<p>My name is Ingy dot Net. I'm one of the 3 original authors of the
+YAML data language, and the only one of those who continues to work on YAML
+daily. I see a future for YAML that builds on its current success while
+addressing its many pitfalls, and making it grow to solve more real world,
+every day needs.</p>
+
+<p>I'm looking for employment at a forward-thinking company that uses YAML as a
+core part of their industry leading projects. Ideally this position would
+strike a balance between:</p>
+
+<ul>
+<li>Helping the company use YAML to its best ability</li>
+<li>Moving YAML (and tools) in the right directions for the company/industry</li>
+<li>Have time to lead general YAML language development</li>
+<li>Be involved in industry conferences to promote good YAML practices</li>
+</ul>
+
+
+<p>Working in Cloud for the past 8 years (see "About Ingy" below), I've been
+focusing on cloud computing companies that support multi-sponsored YAML-using
+projects like OpenStack and Kubernetes. These places seem like a win/win/win
+situation, where I can offer ideas and coding solutions that help them with
+their real-world needs; in ways that become industry standard; while moving the
+YAML language along in the right direction for everybody.</p>
+
+<p>Below I'll attempt to explain both the vision and importance of moving YAML
+forward into the future.</p>
+
+<h2>YAML and the Future</h2>
+
+<p>YAML usage is growing steadily in the computing industry; both in general
+programming and especially in cloud computing. This is most likely due to:</p>
+
+<ul>
+<li>YAML's use of minimal syntax (non-tech people can read/understand it)</li>
+<li>Programming language agnostic (works about the same in any environment)</li>
+<li>Simple API (just <code>Load</code> and sometimes <code>Dump</code>)</li>
+<li>Interchangeable with JSON (YAML is a syntax/model superset of JSON)</li>
+</ul>
+
+
+<p>Given its increasingly important place in production computing, it becomes more
+and more critical that the YAML language and its tools are rock solid.</p>
+
+<p>Unfortunately this isn't the case. YAML is a very complex language, with a
+5-layer processing stack, and a long list of edge cases. YAML was designed to
+simultaneously look and feel simple, while handling all the data serialization
+needs for all programming languages. In reality, the language was created by a
+handful of people in a very grassroots manner, and spread organically across
+the computing landscape. The efforts were well intended but after almost 10
+years, the creators mostly called it quits and moved on. Many things got left
+in an unfinished state.</p>
+
+<p>YAML's problems fall roughly into 3 categories: "syntax", "schema" and "tools".
+The problems include:</p>
+
+<ul>
+<li>No two YAML frameworks work the same</li>
+<li>No YAML implementation correctly implements the YAML spec (1.0, 1.1, 1.2)</li>
+<li>The 1.2 spec has dozens of flaws (implementation can be maddening)</li>
+<li>Needs a definitive test suite (to match and cross reference the spec)</li>
+<li>Most implementations (including libyaml) are still at 1.1</li>
+<li>libyaml (shared library) is written in C (vulnerabilities arise)</li>
+<li>No programatic/templating features (all serious users make their own)</li>
+<li>No YAML doc stands alone semantically (a schema is required)</li>
+<li>There is no YAML schema language yet (each framework has a hardcoded schema)</li>
+<li>Using YAML in statically typed languages (like Go) is too hard</li>
+<li>Misunderstood (very few people have knowledge of the YAML processing stack)</li>
+<li>There are no books written about YAML</li>
+</ul>
+
+
+<p>More simply put, YAML is a (extremely useful) house of cards, that is growing
+in use every day. It needs and deserves to be seen in a more critical light
+than just a config file format.</p>
+
+<p>Fortunately, every one of the listed problems is solvable. Now YAML has many
+years of real world usage to learn from and guide its future. Here are some of
+the envisioned, planned, or in-progress solutions:</p>
+
+<ul>
+<li>YAML 1.3 is in progress, with these goals:
+
+<ul>
+<li>Fully replace 1.2, 1.1 and 1.0</li>
+<li>Add simple/powerful "annotations" and "expansions" features (think templating)</li>
+<li>Remove unused 1.2 edge-cases (that often cripple implementation)</li>
+<li>Every spec detail has one or more YAML Test Suite cases (empirical compliance)</li>
+<li>Achieve real inter-language/framework compatibility</li>
+<li>Encourage written schemas for almost every kind of use</li>
+</ul>
+</li>
+<li>Creation of SchemaType(.org) as the Schema Language for YAML (and thus JSON)
+
+<ul>
+<li>Focused on full-stack code generation (code, docs, sql, tests, wire, editors, ...)</li>
+<li>Goes far beyond data validation</li>
+<li>A schema-aware loader makes Go usage as simple as Python (and Python as rigorous as Go)</li>
+</ul>
+</li>
+<li>Write new 1.3 reference implementation (in something like Go or Rust)
+
+<ul>
+<li>Support a schema-aware <code>Load</code> API</li>
+<li>Supports new annotation features</li>
+<li>Should produce a libyaml shared lib (for use in other languages)</li>
+</ul>
+</li>
+<li>Write a book on YAML that explores its depth in detail</li>
+</ul>
+
+
+<p>Work is ongoing by a few people in their spare time, but that is neither
+achievable or responsible. It's time for YAML to grow up and get serious.
+I'm confident that with the backing of the right people, I can guide the YAML
+project into a promising future.</p>
+
+<h2>About Ingy</h2>
+
+<p>My passion in computing is creating new languages (DSLs) that work across all
+modern programming languages. My primary design goal is always human focused;
+making tools to do powerful and complicated tasks, in a people friendly way.
+YAML is the most well known, but a few others are:</p>
+
+<ul>
+<li>Pegex - PEG parsing framework that uses regex primitives</li>
+<li>TestML - Data driven testing that works in any programming test environment</li>
+<li>Jemplate - Cross language templating engine</li>
+<li>SchemaType - Type definition language for getting the most out of data</li>
+</ul>
+
+
+<p>I have published a <em>lot</em> of open source modules/packages/libraries in many
+languages. My holy grail is to publish all of these modules in dozens of
+languages at once, using the core DSLs listed above. :)</p>
+
+<p>Cloud Computing has been my area of daily work for past 8 years. Recently I
+worked as a Distinguished Technologist at Hewlett Packard Enterprise's cloud
+division. While there I worked with OpenStack, Kubernetes, Cloud Foundry,
+Ansible, Concourse.ci; all of which used YAML! I'm very familiar with how using
+YAML at scale can get messy. I have a head full of ideas to keep it clean.</p>
+
+<p>Contact Info:</p>
+
+<ul>
+<li>ingy@ingy.net</li>
+<li>http://resume.ingy.net</li>
+<li>http://github.com/ingydotnet</li>
+<li>ingy@irc.freenode.net</li>
+</ul>
+
+
+
+</body>
+</html>
+<style> body {font-family: Arial; width: 650px; } </style>

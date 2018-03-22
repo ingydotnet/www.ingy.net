@@ -1,0 +1,18 @@
+[% UNLESS image %][% image = 'photo.jpg' %][% END %]
+[% UNLESS no_header %]
+<h1>[% title %]&nbsp;</h1>
+[% END %]
+[% IF image_href %]
+    <a href="[% image_href %]">
+        [% PROCESS image %]
+    </a>
+[% ELSE %]
+    <span>
+        [% PROCESS image %]
+    </span>
+[% END %]
+
+[% BLOCK image %]
+      <img src="[% image %]" [% IF image_width %]width="[% image_width %]" [% END %]alt="[% title %]" />
+[% END %]
+

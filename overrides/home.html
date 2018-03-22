@@ -1,0 +1,157 @@
+{% extends "main.html" %}
+
+{% block content %}
+<main class="home-page">
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="home-hero__media" data-slideshow>
+      <div class="home-slides">
+        {% for photo in config.extra.photos %}
+          {% set position = photo.position | d("center") %}
+          <figure class="home-slide{% if loop.first %} is-active{% endif %}"
+                  data-slide
+                  aria-hidden="{{ 'false' if loop.first else 'true' }}">
+            <span class="home-slide__backdrop"
+                  style="background-image: url('{{ photo.src | url }}');
+                         background-position: {{ position }}"></span>
+            <img src="{{ photo.src | url }}"
+                 alt="{{ photo.alt }}"
+                 style="object-position: {{ position }}"
+                 {% if loop.first %}
+                 loading="eager" fetchpriority="high"
+                 {% else %}
+                 loading="lazy"
+                 {% endif %}>
+          </figure>
+        {% endfor %}
+      </div>
+
+      <div class="slideshow-controls" aria-label="Photo slideshow controls">
+        <button type="button" data-slide-previous
+                aria-label="Previous photo">Previous</button>
+        <span data-slide-status aria-hidden="true">
+          1 / {{ config.extra.photos | length }}
+        </span>
+        <button type="button" data-slide-toggle
+                aria-label="Pause slideshow">Pause</button>
+        <button type="button" data-slide-next
+                aria-label="Next photo">Next</button>
+      </div>
+    </div>
+
+    <div class="home-hero__intro" data-hero-intro>
+      <button class="home-hero__dismiss" type="button"
+              data-hero-dismiss aria-label="Hide introduction">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p class="home-eyebrow">
+        YAML co-creator <span aria-hidden="true">&middot;</span>
+        Open source developer <span aria-hidden="true">&middot;</span>
+        Speaker
+      </p>
+      <h1 id="home-title">Ingy döt Net</h1>
+      <p>
+        I build languages and tools that make powerful ideas feel simple.
+        I am best known as one of the creators of YAML and as the creator of
+        YAMLScript.
+      </p>
+      <a class="home-button home-button--light" href="#about">
+        About and contact
+      </a>
+    </div>
+  </section>
+
+  <section class="featured-talk" id="talk"
+           aria-labelledby="talk-title">
+    <div>
+      <p class="section-eyebrow">Featured talk</p>
+      <h2 id="talk-title">
+        Evolving the YAML Family
+        <span>(without Breaking the World)</span>
+      </h2>
+      <p class="talk-meta">
+        Open Source Summit Europe
+        <span aria-hidden="true">&middot;</span>
+        Prague
+        <span aria-hidden="true">&middot;</span>
+        October 7, 2026
+      </p>
+      <p>
+        Slides, demonstrations, and source from my talk about making YAML
+        better while keeping the ecosystem working.
+      </p>
+    </div>
+    <a class="home-button home-button--primary"
+       href="https://ingydotnet.github.io/oss-eu-yaml-talk/">
+      Get the slides
+    </a>
+  </section>
+
+  <section class="about-section" id="about" aria-labelledby="about-title">
+    <div class="about-copy">
+      <p class="section-eyebrow">About</p>
+      <h2 id="about-title">Code, data, and open source</h2>
+      <p>
+        I am a software developer and speaker best known for my work on the
+        <a href="https://yaml.org/">YAML</a> data serialization language.
+      </p>
+      <p>
+        Recently I created
+        <a href="https://yamlscript.org/">YAMLScript</a>, a programming
+        language that embeds cleanly into YAML and adds the functional
+        features many YAML users need.
+      </p>
+      <p>
+        I maintain many important
+        <a href="https://yaml.com/projects/">YAML open source projects</a>
+        and enjoy turning ambitious language ideas into practical tools.
+      </p>
+    </div>
+
+    <aside class="availability">
+      <h2>Work with me</h2>
+      <p>
+        I am available for consulting, training, and speaking engagements
+        worldwide on YAML, YAMLScript, and related topics.
+      </p>
+      <a class="home-button home-button--primary"
+         href="mailto:ingy@ingy.net">Email me</a>
+    </aside>
+  </section>
+
+  <section class="contact-section" id="contact"
+           aria-labelledby="contact-title">
+    <p class="section-eyebrow">Contact</p>
+    <h2 id="contact-title">Let's talk</h2>
+    <div class="contact-grid">
+      <a href="mailto:ingy@ingy.net">
+        <strong>Email</strong>
+        <span>ingy@ingy.net</span>
+      </a>
+      <a href="https://github.com/ingydotnet">
+        <strong>GitHub</strong>
+        <span>@ingydotnet</span>
+      </a>
+      <a href="https://www.linkedin.com/in/ingydotnet">
+        <strong>LinkedIn</strong>
+        <span>ingydotnet</span>
+      </a>
+      <a href="https://matrix.to/#/@ingy:yaml.io">
+        <strong>Matrix</strong>
+        <span>@ingy:yaml.io</span>
+      </a>
+      <a href="https://bsky.app/profile/ingydotnet.bsky.social">
+        <strong>Bluesky</strong>
+        <span>@ingydotnet.bsky.social</span>
+      </a>
+      <a href="https://cloud-native.slack.com/team/U08GBQNJTFC">
+        <strong>CNCF Slack</strong>
+        <span>Ingy döt Net</span>
+      </a>
+      <a href="https://discord.gg/hJ7UkFbYVS">
+        <strong>Discord</strong>
+        <span>ingydotnet_21552</span>
+      </a>
+    </div>
+  </section>
+</main>
+{% endblock %}

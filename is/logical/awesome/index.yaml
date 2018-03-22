@@ -1,0 +1,6 @@
+template_name: photo.html.tt2
+no_header: true
+top: ../../..
+title: Ingy döt Net is Logical Awesome
+image: logical_awesome.jpg
+image_href: http://github.com/ingydotnet/

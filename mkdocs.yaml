@@ -1,0 +1,53 @@
+site_name: Ingy döt Net
+site_url: https://ingy.net/
+site_description: YAML co-creator, open source developer and speaker
+site_author: Ingy döt Net
+
+docs_dir: src
+site_dir: site
+
+hooks:
+- hooks.py
+
+theme:
+  name: material
+  custom_dir: overrides
+  font: false
+  favicon: assets/images/avatar.jpg
+  icon:
+    logo: material/account-circle
+  palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: deep purple
+    accent: amber
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: deep purple
+    accent: amber
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+
+nav:
+- Home: index.md
+
+plugins: []
+
+markdown_extensions:
+- attr_list
+- md_in_html
+
+extra_css:
+- assets/stylesheets/extra.css
+
+extra_javascript:
+- assets/javascripts/site.js
+
+extra:
+  homepage: /
+
+copyright: Copyright &copy; 2026 Ingy döt Net

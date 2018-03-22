@@ -1,0 +1,12 @@
+- src: assets/images/avatar.jpg
+  alt: Ingy döt Net in front of a wall covered with posters
+  position: 72% center
+- src: assets/images/ingy-velip.jpg
+  alt: Ingy riding a bicycle on a city street
+  position: 72% center
+- src: assets/images/ingy-tw-coffee.jpg
+  alt: Ingy smiling with a friend in a coffee shop
+  position: 72% 42%
+- src: assets/images/IngyWhiteShirt.jpg
+  alt: Portrait of Ingy wearing a white shirt
+  position: 72% center
